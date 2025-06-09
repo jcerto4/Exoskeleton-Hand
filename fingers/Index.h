@@ -7,11 +7,14 @@ private:
     int outValvePin;
     int pressureSensorPin;
 
+    static constexpr float VOLTAGE = 5.0;
+    static constexpr float ADC_RES = 1023.0;
+
     public:
         Index(int inValve, int outValve, int pressureSensor);
         void actuate();
         void release();
-        int readPressure();
+        float readPressure();
 };
 
 #endif 

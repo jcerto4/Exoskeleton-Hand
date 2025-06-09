@@ -5,7 +5,7 @@ Hand::Hand()
     :   thumb(4, 5, A0),
         index(6, 7, A1),
         multiFinger(8, 9, A2) {
-        //eventually the pressure vessel
+        //Pressure Vessel(10, 11, A3){
 }
 
 void Hand::pinch() {

@@ -22,8 +22,7 @@ void Thumb::release() {
 }
 
 float Thumb::readPressure() {
-    int raw = analogRead(pressureSensorPin);
-    float voltage = raw * (VOLTAGE / ADC_RES);
-    float pressure = (voltage - 0.1f) / 3.0f * 300.0f - 100.0f;
+    float voltageOut = analogRead(pressureSensorPin) * (VOLTAGE / ADC_RES);
+    float pressure = (voltageOut - 0.1f) / 3.0f * 300.0f - 100.0f;
     return max(0.0f, pressure);
 }

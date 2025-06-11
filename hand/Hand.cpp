@@ -2,10 +2,11 @@
 #include <Arduino.h>
 
 Hand::Hand()
-    :   thumb(4, 5, A0),
+    :   outValvePin(5),
+        thumb(4, 5, A0),
         index(6, 7, A1),
-        multiFinger(8, 9, A2) {
-        //Pressure Vessel(10, 11, A3){
+        multiFinger(8, 9, A2){
+    pinMode(outValvePin, OUTPUT);
 }
 
 void Hand::pinch() {
@@ -22,8 +23,7 @@ void Hand::grasp() {
 }
 
 void Hand::release() {
-    thumb.release();
-    index.release();
-    multiFinger.release();
+    digitalWrite(outValvePin, HIGH);
     delay(500);
+    digitalWrite(outValvePin, LOW);
 }

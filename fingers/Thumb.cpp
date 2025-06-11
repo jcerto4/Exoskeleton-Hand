@@ -1,24 +1,15 @@
 #include "Thumb.h"
 #include <Arduino.h>
 
-Thumb::Thumb(int inValve, int outValve, int pressureSensor) 
-    : inValvePin(inValve), outValvePin(outValve), pressureSensorPin(pressureSensor) {
+Thumb::Thumb(int inValve, int pressureSensor) 
+    : inValvePin(inValve), pressureSensorPin(pressureSensor) {
     pinMode(inValvePin, OUTPUT);
-    pinMode(outValvePin, OUTPUT);
 }
 
 void Thumb::actuate() {
     digitalWrite(inValvePin, HIGH);
-    digitalWrite(outValvePin, LOW);
     delay(500);
     digitalWrite(inValvePin, LOW);
-}
-
-void Thumb::release() {
-    digitalWrite(inValvePin, LOW);
-    digitalWrite(outValvePin, HIGH);
-    delay(500);
-    digitalWrite(outValvePin, LOW);
 }
 
 float Thumb::readPressure() {

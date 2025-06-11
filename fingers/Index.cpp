@@ -1,24 +1,15 @@
 #include "Index.h"
 #include <Arduino.h>
 
-Index::Index(int inValve, int outValve, int pressureSensor) 
-    : inValvePin(inValve), outValvePin(outValve), pressureSensorPin(pressureSensor) {
+Index::Index(int inValve, int pressureSensor) 
+    : inValvePin(inValve), pressureSensorPin(pressureSensor) {
     pinMode(inValvePin, OUTPUT);
-    pinMode(outValvePin, OUTPUT);
 }
 
 void Index::actuate() {
     digitalWrite(inValvePin, HIGH);
-    digitalWrite(outValvePin, LOW);
     delay(500);
     digitalWrite(inValvePin, LOW);
-}
-
-void Index::release() {
-    digitalWrite(inValvePin, LOW);
-    digitalWrite(outValvePin, HIGH);
-    delay(500);
-    digitalWrite(outValvePin, LOW);
 }
 
 float Index::readPressure() {

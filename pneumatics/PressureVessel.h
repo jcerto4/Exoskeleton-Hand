@@ -9,8 +9,8 @@ private:
     int pressureSensorPin;
     bool isFilling;
 
-    static constexpr float MIN_PRESSURE = 245;
-    static constexpr float MAX_PRESSURE = 1000.0;
+    static constexpr float MIN_PRESSURE = 245.0;
+    static constexpr float MAX_PRESSURE = 800.0;
     static constexpr float VOLTAGE = 5.0;
     static constexpr float ADC_RES = 1023.0;
 

@@ -17,7 +17,6 @@ void PressureVessel::fill() {
         digitalWrite(motorPin, HIGH);
         isFilling = true;
     }
-    
     if(isFilling && pressure >= MAX_PRESSURE){
         digitalWrite(inValvePin, LOW);
         digitalWrite(motorPin, LOW);

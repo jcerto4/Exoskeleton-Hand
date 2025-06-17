@@ -1,9 +1,7 @@
 #ifndef HAND_H
 #define HAND_H
 
-#include "Thumb.h"
-#include "Index.h"
-#include "MultiFinger.h"
+#include "Finger.h"
 
 class Hand {
 private:

@@ -4,7 +4,6 @@
 #include "Thumb.h"
 #include "Index.h"
 #include "MultiFinger.h"
-#include "PressureVessel.h"
 
 class Hand {
 private:
@@ -12,7 +11,6 @@ private:
    Thumb thumb;
    Index index;
    MultiFinger multiFinger;
-   PressureVessel vessel;
 
     public:
         Hand();
